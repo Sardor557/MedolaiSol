@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36811.4 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medolai", "Medolai\Medolai.csproj", "{02F89245-8CBA-4304-9F70-B8765504004C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medolai.Repository", "Medolai.Repository\Medolai.Repository.csproj", "{5435D53B-E2AE-4F96-BC96-0D5F47BC3E15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medolai.Database", "Medolai.Database\Medolai.Database.csproj", "{09146C06-F02A-4D28-89E3-C57AF89F6765}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medolai.Utils", "Medolai.Utils\Medolai.Utils.csproj", "{79174B4D-7FE8-4338-809B-B8096423089C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medolai.Shared", "Medolai.Shared\Medolai.Shared.csproj", "{78B719B1-3F8B-4C39-97FE-62704106A2A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medolai.App", "Medolai.App\Medolai.App.csproj", "{CABAA821-8549-47C4-B35B-1BADA4A37EDE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02F89245-8CBA-4304-9F70-B8765504004C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02F89245-8CBA-4304-9F70-B8765504004C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02F89245-8CBA-4304-9F70-B8765504004C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02F89245-8CBA-4304-9F70-B8765504004C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5435D53B-E2AE-4F96-BC96-0D5F47BC3E15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5435D53B-E2AE-4F96-BC96-0D5F47BC3E15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5435D53B-E2AE-4F96-BC96-0D5F47BC3E15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5435D53B-E2AE-4F96-BC96-0D5F47BC3E15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09146C06-F02A-4D28-89E3-C57AF89F6765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09146C06-F02A-4D28-89E3-C57AF89F6765}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09146C06-F02A-4D28-89E3-C57AF89F6765}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09146C06-F02A-4D28-89E3-C57AF89F6765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79174B4D-7FE8-4338-809B-B8096423089C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79174B4D-7FE8-4338-809B-B8096423089C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79174B4D-7FE8-4338-809B-B8096423089C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79174B4D-7FE8-4338-809B-B8096423089C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78B719B1-3F8B-4C39-97FE-62704106A2A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78B719B1-3F8B-4C39-97FE-62704106A2A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78B719B1-3F8B-4C39-97FE-62704106A2A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78B719B1-3F8B-4C39-97FE-62704106A2A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CABAA821-8549-47C4-B35B-1BADA4A37EDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CABAA821-8549-47C4-B35B-1BADA4A37EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CABAA821-8549-47C4-B35B-1BADA4A37EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CABAA821-8549-47C4-B35B-1BADA4A37EDE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB3B9D03-040C-4B47-9DBE-467E7528E90B}
+	EndGlobalSection
+EndGlobal

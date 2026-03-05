@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+ 
+  <ItemGroup>
+    <ProjectReference Include="..\Medolai.Database\Medolai.Database.csproj" />
+    <ProjectReference Include="..\Medolai.Shared\Medolai.Shared.csproj" />
+    <ProjectReference Include="..\Medolai.Utils\Medolai.Utils.csproj" />
+  </ItemGroup>
+
+</Project>
