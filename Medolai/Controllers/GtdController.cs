@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace Medolai.Controllers
 {
     [ApiController]
-    [Route("api/v2/[controller]")]
+    [Route("api/v1/[controller]")]
 
     public class GtdController : ControllerBase
     {
@@ -24,6 +24,13 @@ namespace Medolai.Controllers
             if (res.Code == 1)
                 return Ok(res);
             return BadRequest(res);
+        }
+
+        [HttpGet("GetAll")]
+        public async Task<IActionResult> GetAllForGrid()
+        {
+            var res = await gdtService.GetAllForGridAsync();
+            return Ok(res);
         }
     }
 }

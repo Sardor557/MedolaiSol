@@ -85,8 +85,6 @@ namespace Medolai
 
             app.UseRouting();
             app.UseCors("AllowAllHeaders");
-            app.UseAuthentication();
-            app.UseAuthorization();
             app.UseForwardedHeaders(new ForwardedHeadersOptions { ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto });
             app.MapControllers();
 
