@@ -40,7 +40,7 @@ public static class XmlToEfMapper
 
     private static void ParseAndAttachRecursive(object parent, XElement tableElement)
     {
-        var tag = tableElement.Name.LocalName; // T2, T4, ...
+        var tag = tableElement.Name.LocalName;
         var childType = GetTypeByTableTag(tag);
         if (childType is null) return;
 
@@ -62,7 +62,6 @@ public static class XmlToEfMapper
         return n.Skip(1).All(char.IsDigit);
     }
 
-    // --------- tag -> type ---------
     private static readonly ConcurrentDictionary<string, Type?> TagToTypeCache = new(StringComparer.OrdinalIgnoreCase);
     private static readonly Lazy<Dictionary<string, Type>> TagToType = new(BuildTagToType);
 
@@ -93,7 +92,6 @@ public static class XmlToEfMapper
         return t;
     }
 
-    // --------- columns ---------
     private sealed record ColProp(PropertyInfo Prop, string ColumnName, Type TargetType);
     private static readonly ConcurrentDictionary<Type, List<ColProp>> ColumnPropsCache = new();
 
@@ -115,7 +113,6 @@ public static class XmlToEfMapper
 
         foreach (var cp in props)
         {
-            // пропускаем служебные колонки ID и FK
             if (cp.ColumnName.Equals("ID", StringComparison.OrdinalIgnoreCase)) continue;
             if (cp.ColumnName.EndsWith("_ID", StringComparison.OrdinalIgnoreCase)) continue;
 
@@ -171,19 +168,16 @@ public static class XmlToEfMapper
         return false;
     }
 
-    // --------- attach & nav ---------
     private static void AttachChild(object parent, object child)
     {
         var parentType = parent.GetType();
         var childType = child.GetType();
 
-        // nav to parent
         var navToParent = childType.GetProperties(BindingFlags.Instance | BindingFlags.Public)
             .FirstOrDefault(p => p.CanWrite && p.PropertyType == parentType);
 
         navToParent?.SetValue(child, parent);
 
-        // add to parent collection
         var collProp = parentType.GetProperties(BindingFlags.Instance | BindingFlags.Public)
             .FirstOrDefault(p =>
                 p.PropertyType.IsGenericType
