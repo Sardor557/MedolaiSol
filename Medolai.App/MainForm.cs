@@ -39,6 +39,10 @@ namespace Medolai.App
 
                 goodsView.PopulateColumns();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка загрузки данных: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             finally
             {
                 WaitFormManager.Close(this);
@@ -66,6 +70,10 @@ namespace Medolai.App
                     }
                     else
                         MessageBox.Show($"Ошибка загрузки файла: {res.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка загрузки файла: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
