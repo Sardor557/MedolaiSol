@@ -273,6 +273,7 @@
             barLoadFileBtn.Id = 1;
             barLoadFileBtn.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("barLoadFileBtn.ImageOptions.SvgImage");
             barLoadFileBtn.Name = "barLoadFileBtn";
+            barLoadFileBtn.ItemClick += barLoadFileBtn_ItemClick;
             // 
             // ribbonPage1
             // 

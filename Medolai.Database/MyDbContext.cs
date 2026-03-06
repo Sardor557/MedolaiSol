@@ -41,5 +41,19 @@ public class MyDbContext : DbContext
             .HasForeignKey(e => e.T2Id)
             .OnDelete(DeleteBehavior.Cascade);
 
+        modelBuilder.Entity<GtdT1>()
+            .ToTable(t => t.HasComment("Декларация на товары (шапка)"));
+
+        modelBuilder.Entity<GtdT2>()
+            .ToTable(t => t.HasComment("Товарные позиции декларации (строки товара)"));
+
+        modelBuilder.Entity<GtdT4>()
+            .ToTable(t => t.HasComment("Платежи по товару"));
+
+        modelBuilder.Entity<GtdT7>()
+            .ToTable(t => t.HasComment("Описание/характеристики товара (31 графа)"));
+        
+        modelBuilder.Entity<GtdT9>()
+            .ToTable(t => t.HasComment("Документы по товарной позиции (приложенные/подтверждающие документы)"));
     }
 }

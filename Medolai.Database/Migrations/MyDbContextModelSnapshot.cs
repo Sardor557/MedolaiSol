@@ -260,7 +260,10 @@ namespace Medolai.Database.Migrations
                     b.HasKey("Id")
                         .HasName("pk_t1");
 
-                    b.ToTable("T1");
+                    b.ToTable("T1", t =>
+                        {
+                            t.HasComment("Декларация на товары (шапка)");
+                        });
                 });
 
             modelBuilder.Entity("GtdXmlEf.Models.GtdT2", b =>
@@ -368,7 +371,10 @@ namespace Medolai.Database.Migrations
                     b.HasIndex("T1Id")
                         .HasDatabaseName("ix_t2_t1_id");
 
-                    b.ToTable("T2");
+                    b.ToTable("T2", t =>
+                        {
+                            t.HasComment("Товарные позиции декларации (строки товара)");
+                        });
                 });
 
             modelBuilder.Entity("GtdXmlEf.Models.GtdT4", b =>
@@ -419,7 +425,10 @@ namespace Medolai.Database.Migrations
                     b.HasIndex("T2Id")
                         .HasDatabaseName("ix_t4_t2_id");
 
-                    b.ToTable("T4");
+                    b.ToTable("T4", t =>
+                        {
+                            t.HasComment("Платежи по товару");
+                        });
                 });
 
             modelBuilder.Entity("GtdXmlEf.Models.GtdT7", b =>
@@ -454,7 +463,10 @@ namespace Medolai.Database.Migrations
                     b.HasIndex("T2Id")
                         .HasDatabaseName("ix_t7_t2_id");
 
-                    b.ToTable("T7");
+                    b.ToTable("T7", t =>
+                        {
+                            t.HasComment("Описание/характеристики товара (31 графа)");
+                        });
                 });
 
             modelBuilder.Entity("GtdXmlEf.Models.GtdT9", b =>
@@ -505,7 +517,10 @@ namespace Medolai.Database.Migrations
                     b.HasIndex("T2Id")
                         .HasDatabaseName("ix_t9_t2_id");
 
-                    b.ToTable("T9");
+                    b.ToTable("T9", t =>
+                        {
+                            t.HasComment("Документы по товарной позиции (приложенные/подтверждающие документы)");
+                        });
                 });
 
             modelBuilder.Entity("GtdXmlEf.Models.GtdT2", b =>

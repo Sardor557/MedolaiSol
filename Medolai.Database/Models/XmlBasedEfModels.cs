@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace GtdXmlEf.Models;
 
 [Table("T1")]
+[Description("Декларация (шапка ГТД)")]
 public class GtdT1
 {
     [Key]
@@ -245,6 +246,7 @@ public class GtdT1
 }
 
 [Table("T2")]
+[Description("Товарные позиции декларации")]
 public class GtdT2
 {
     [Key]
@@ -353,6 +355,7 @@ public class GtdT2
 }
 
 [Table("T4")]
+[Description("Платежи по товару")]
 public class GtdT4
 {
     [Key]
@@ -398,6 +401,7 @@ public class GtdT4
 }
 
 [Table("T7")]
+[Description("Описание/характеристики товара (31 графа)")]
 public class GtdT7
 {
     [Key]
@@ -427,6 +431,7 @@ public class GtdT7
 }
 
 [Table("T9")]
+[Description("Документы по товарной позиции (приложенные/подтверждающие документы)")]
 public class GtdT9
 {
     [Key]
@@ -468,5 +473,4 @@ public class GtdT9
     [Column("P200T9")]
     [MaxLength(20)]
     public string? Field200 { get; set; }
-
 }

@@ -1,22 +1,12 @@
-﻿using DevExpress.Spreadsheet.Charts;
-using DevExpress.XtraBars;
+﻿using DevExpress.XtraBars;
 using DevExpress.XtraGrid;
-using DevExpress.XtraGrid.Views.Card;
 using Medolai.App.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Medolai.App
 {
     public partial class MainForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        private readonly GridService gridService = new GridService();
         public MainForm()
         {
             InitializeComponent();
@@ -24,19 +14,16 @@ namespace Medolai.App
 
         private async void gridManControl_Load(object sender, EventArgs e)
         {
-            var service = new GridService();
-            var gr = await service.GetRowsAsync();
+            var gr = await gridService.GetRowsAsync();
             this.gridManControl.DataSource = gr;
 
             gridManControl.ViewCollection.Add(this.goodsView);
 
-            // настройки карточек
             goodsView.OptionsView.ShowQuickCustomizeButton = false;
             goodsView.OptionsBehavior.Editable = false;
 
-            // связь master-detail
             GridLevelNode node = new GridLevelNode();
-            node.RelationName = "Goods";   // имя коллекции
+            node.RelationName = "Goods";
             node.LevelTemplate = goodsView;
 
             gridManControl.LevelTree.Nodes.Clear();
@@ -47,8 +34,28 @@ namespace Medolai.App
                 e.CardCaption = $"Товар № {e.RowHandle + 1}";
             };
 
-            // создать колонки
             goodsView.PopulateColumns();
+        }
+
+        private async void barLoadFileBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "XML files|*.xml";
+                if (ofd.ShowDialog() != DialogResult.OK)                
+                    return;
+                
+                string filePath = ofd.FileName;
+                var res = await gridService.LoadAsync(filePath);
+                if (res.Code == 1)
+                {
+                    MessageBox.Show("Файл успешно загружен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var gr = await gridService.GetRowsAsync();
+                    this.gridManControl.DataSource = gr;
+                }
+                else
+                    MessageBox.Show($"Ошибка загрузки файла: {res.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

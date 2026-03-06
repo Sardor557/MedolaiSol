@@ -73,7 +73,8 @@ namespace Medolai.Database.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("pk_t1", x => x.ID);
-                });
+                },
+                comment: "Декларация на товары (шапка)");
 
             migrationBuilder.CreateTable(
                 name: "T2",
@@ -112,7 +113,8 @@ namespace Medolai.Database.Migrations
                         principalTable: "T1",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
-                });
+                },
+                comment: "Товарные позиции декларации (строки товара)");
 
             migrationBuilder.CreateTable(
                 name: "T4",
@@ -138,7 +140,8 @@ namespace Medolai.Database.Migrations
                         principalTable: "T2",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
-                });
+                },
+                comment: "Платежи по товару");
 
             migrationBuilder.CreateTable(
                 name: "T7",
@@ -160,7 +163,8 @@ namespace Medolai.Database.Migrations
                         principalTable: "T2",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
-                });
+                },
+                comment: "Описание/характеристики товара (31 графа)");
 
             migrationBuilder.CreateTable(
                 name: "T9",
@@ -185,7 +189,8 @@ namespace Medolai.Database.Migrations
                         principalTable: "T2",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
-                });
+                },
+                comment: "Документы по товарной позиции (приложенные/подтверждающие документы)");
 
             migrationBuilder.CreateIndex(
                 name: "ix_t2_t1_id",
