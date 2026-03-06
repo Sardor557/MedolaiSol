@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Medolai.Database.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20260306044051_db1")]
+    [Migration("20260306053048_db1")]
     partial class db1
     {
         /// <inheritdoc />
